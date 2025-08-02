@@ -2,15 +2,17 @@
 
 Adventurer::Adventurer()
 {
-	name = " ";
-	race = " ";
-	background = " ";
+	name = "";
+	race = "";
+	background = "";
 	level = 1;
 	hpPerLvl = 4;
 	speed = 30;
+	AdventurerArmor = nullptr;
+	AdventurerWeapon = nullptr;
 }
 
-Adventurer::Adventurer(string name, string race, string background, int lvl)
+Adventurer::Adventurer(string name, string race, string background, int lvl, Armor* AdventurerArmor, Weapon* AdventurerWeapon, Class* AdventurerClass)
 {
 	this->name = name;
 	this->race = race;
@@ -18,6 +20,9 @@ Adventurer::Adventurer(string name, string race, string background, int lvl)
 	level = lvl;
 	hpPerLvl = 4;
 	speed = 30;
+	this->AdventurerArmor = AdventurerArmor;
+	this->AdventurerWeapon = AdventurerWeapon;
+
 }
 
 void Adventurer::examine(string obj)
@@ -41,7 +46,8 @@ void Adventurer::move(int feet)
 void Adventurer::adventurerInfo()
 {
 	cout << "Name: " << name << endl << "Race: " << race << endl
-		<< "Background: " << background << endl << "Level: " << level << endl;
+		<< "Background: " << background << endl << "Class: " << className << endl
+		<< "Level: " << level << endl;
 }
 
 void Adventurer::setName(string name)
@@ -92,4 +98,9 @@ int Adventurer::getLevel()
 int Adventurer::getSpeed()
 {
 	return speed;
+}
+
+void Adventurer::act()
+{
+	cout << name << " " << AdventurerClass->attack() << endl;
 }

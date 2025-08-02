@@ -1,9 +1,17 @@
 #ifndef WIZARD_H
 #define WIZARD_H
-#include "Adventurer.h"
-//Focus on spellcasting (all same level of spell keep track with an int), arcane knowledge, and spell recovery (short ritual to regain a spellslot)
-class Wizard : public Adventurer
+#include "Class.h"
+#include <vector>
+//Focus on spellcasting
+class Wizard : public Class
 {
+private:
+	vector<string> spellbook;
+public:
+	Wizard();
+	string castSpell(string spell);
+	string pickSpell();
+	virtual string attack();
 
 };
 #endif

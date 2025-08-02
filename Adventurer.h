@@ -3,21 +3,24 @@
 #include <iostream>
 #include "Weapon.h"
 #include "Armor.h"
+#include "Class.h"
 using namespace std;
 class Adventurer
 {
-private:
+protected:
 	string name;
 	string race;
 	string background;
-	int level; //up to 5 (martial classes get extra attack at lvl 5 and spellcaster amount of spells goes up each lvl)
-	int hpPerLvl; //base is 4 (changes by class based on average of dice roll; base is 1d6)
-	int speed; //how many feet per round (base is 30)
-	Armor Armor; //How do i implement in constructor?
-	Weapon Weapon; //How do i implement in constructor?
+	int level;
+	int hpPerLvl;
+	int speed;
+	Armor* AdventurerArmor;
+	Weapon* AdventurerWeapon;
+	Class* AdventurerClass;
 public:
 	Adventurer();
-	Adventurer(string name, string race, string background, int lvl);
+	Adventurer(string name, string race, string background, int lvl, Armor* AdventurerArmor, Weapon* AdventurerWeapon, Class* AdventurerClass);
+	void act();
 	void examine(string obj);
 	void move(int feet); //can move less than or equal to the speed amount
 	void adventurerInfo(); //Describes adventurer
