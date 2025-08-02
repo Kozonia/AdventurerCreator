@@ -10,7 +10,7 @@ Wizard::Wizard()
 
 string Wizard::castSpell(string spell)
 {
-	return " casts " + spell + ".\n";
+	return " casts " + spell;
 }
 
 string Wizard::pickSpell()
@@ -20,6 +20,6 @@ string Wizard::pickSpell()
 
 string Wizard::attack()
 {
-	return name + " the " + className + castSpell(pickSpell());
+	return "the " + className + castSpell(pickSpell());
 	
 }

@@ -34,10 +34,10 @@ string Rogue::attack()
 {
 	if (isHidden)
 	{
-		return "the " + className + " silently stabs the target.";
+		return "the " + className + " silently attacks the target";
 	}
 	else
 	{
-		return "the " + className + " slashes at the target.";
+		return "the " + className + " attacks at the target";
 	}
 }

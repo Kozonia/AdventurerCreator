@@ -10,7 +10,7 @@ public:
 	Class();
 	virtual string attack() = 0;
 	string getClassName();
-	void setClassName();
+	void setClassName(string name);
 
 };
 #endif

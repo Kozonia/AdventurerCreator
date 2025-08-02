@@ -22,6 +22,7 @@ Adventurer::Adventurer(string name, string race, string background, int lvl, Arm
 	speed = 30;
 	this->AdventurerArmor = AdventurerArmor;
 	this->AdventurerWeapon = AdventurerWeapon;
+	this->AdventurerClass = AdventurerClass;
 
 }
 
@@ -46,7 +47,7 @@ void Adventurer::move(int feet)
 void Adventurer::adventurerInfo()
 {
 	cout << "Name: " << name << endl << "Race: " << race << endl
-		<< "Background: " << background << endl << "Class: " << className << endl
+		<< "Background: " << background << endl << "Class: " << AdventurerClass->getClassName() << endl
 		<< "Level: " << level << endl;
 }
 
@@ -102,5 +103,5 @@ int Adventurer::getSpeed()
 
 void Adventurer::act()
 {
-	cout << name << " " << AdventurerClass->attack() << endl;
+	cout << name << " " << AdventurerClass->attack() <<  " with thier " << AdventurerWeapon->getWeaponType() << "." << endl;
 }
